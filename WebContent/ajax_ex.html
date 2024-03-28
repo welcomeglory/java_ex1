@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	   
+	   $("#btn").click(function(){
+	       
+	      $.ajax({
+	            type:"get",
+	            url:"/json/json",
+	            success:function(data){
+	              console.log(data)
+	            },
+	            error:function(xhr, textStatus, errorThrown){
+	              console.log("에러가 발생 하였습니다.")
+	              console.log(xhr);
+	              console.log(textStatus);
+	              console.log(errorThrown);
+	            }
+	          });	      
+	   });	   
+	});
+
+</script>
+</head>
+<body>
+<button id="btn"  type="button">클릭</button>
+</body>
+</html>
